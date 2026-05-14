@@ -1,11 +1,68 @@
+<div align="center">
+
 # 다시, 가족
 
-> 유기동물 조회, 보호소 탐색, 입양 신청, 후원, 입양 후기, AI 상담, 관리자 운영 기능을 하나로 연결한 유기동물 보호/입양 플랫폼입니다.
+### 유기동물 조회부터 입양 신청, 후원, AI 상담, 관리자 운영까지 연결한 풀스택 동물 입양 플랫폼
 
-![Java](https://img.shields.io/badge/Java-21-007396?style=for-the-badge&logo=openjdk&logoColor=white) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.6-6DB33F?style=for-the-badge&logo=springboot&logoColor=white) ![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=111111) ![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Java](https://img.shields.io/badge/Java-21-007396?style=for-the-badge&logo=openjdk&logoColor=white)
+![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.6-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=111111)
+![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![Security](https://img.shields.io/badge/Spring%20Security-Session%20Auth-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white)
+
+<br />
+
+<img src="frontend/src/assets/banner1.png" alt="다시, 가족 메인 배너" width="900" />
+
+</div>
+
+## Portfolio Point
+
+`다시, 가족`은 공공데이터포털의 유기동물 데이터를 수집해 사용자 서비스와 관리자 운영 기능까지 이어지도록 만든 포트폴리오 프로젝트입니다. 단순 CRUD를 넘어서 배치 수집, 세션 인증, CSRF, 관리자 권한, 이미지 업로드 검증, 결제 준비/검증 구조, AI 소개/상담, 통계 화면까지 실제 서비스 운영 흐름을 기준으로 구성했습니다.
+
+| 영역 | 구현 포인트 |
+| --- | --- |
+| 데이터 수집 | 공공 API 데이터를 배치로 수집하고 `AnimalSnapshot`에 저장 |
+| 사용자 경험 | 지역별 동물 조회, 보호소 지도 탐색, 관심 동물, 입양 신청, 후기 |
+| 인증/보안 | 세션 로그인, OAuth2 확장 구조, CSRF 토큰, 관리자 권한 분리 |
+| 결제/후원 | PortOne 결제 준비/검증 구조, 후원 캠페인, 후원자 등급 |
+| 운영 도구 | 관리자 대시보드, 신청/후원/회원/캠페인/배치 관리 |
+| AI 기능 | OpenRouter 기반 동물 소개글 생성, 입양 상담 챗봇 |
+
+## Preview
+
+| 메인 | 보호소 지도 탐색 |
+| --- | --- |
+| <img src="frontend/src/assets/banner1.png" alt="메인 배너" width="420" /> | <img src="frontend/src/assets/banner3.png" alt="보호소 안내 배너" width="420" /> |
+
+## 빠른 실행
+
+```powershell
+# Backend
+cd C:\ww\ww\demo
+$env:JAVA_HOME='C:\ww\ww\jdk21\jdk-21.0.10+7'
+$env:Path="$env:JAVA_HOME\bin;$env:Path"
+.\mvnw.cmd spring-boot:run
+```
+
+```powershell
+# Frontend
+cd C:\ww\ww\frontend
+npm run dev
+```
+
+```text
+Frontend: http://localhost:5173
+Backend:  http://localhost:8080
+Swagger:  http://localhost:8080/swagger-ui/index.html
+```
 
 ## 목차
 
+- [Portfolio Point](#portfolio-point)
+- [Preview](#preview)
+- [빠른 실행](#빠른-실행)
 - [프로젝트 소개](#프로젝트-소개)
 - [핵심 기능](#핵심-기능)
 - [기술 스택](#기술-스택)
