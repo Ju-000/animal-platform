@@ -1,0 +1,37 @@
+﻿services:
+  app:
+    build: .
+    container_name: pododong-backend
+    env_file:
+      - .env
+    environment:
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-local}
+      DB_URL: ${DB_URL:-jdbc:mysql://db:3306/again_family?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useUnicode=true}
+      DB_USERNAME: ${DB_USERNAME:-again_family}
+      DB_PASSWORD: ${DB_PASSWORD:-again_family_password}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    volumes:
+      - ./uploads:/app/uploads
+
+  db:
+    image: mysql:8.0
+    container_name: pododong-mysql
+    environment:
+      MYSQL_DATABASE: again_family
+      MYSQL_USER: ${DB_USERNAME:-again_family}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-again_family_password}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root_password}
+      TZ: Asia/Seoul
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+
+volumes:
+  mysql-data:

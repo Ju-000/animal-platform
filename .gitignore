@@ -1,0 +1,23 @@
+# Environment and local secret files
+.env
+.env.*
+!.env.example
+
+# Local IDE and database files
+.idea/
+*.local
+*.local.*
+
+# Build outputs and generated artifacts
+target/
+build/
+dist/
+node_modules/
+*.class
+uploads/
+*.log
+
+# Archives or local dependency bundles
+*.zip
+.m2repo/
+jdk21/

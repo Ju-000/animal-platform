@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<body style="margin:0;padding:24px;background:#f7f4ef;font-family:Arial,'Malgun Gothic',sans-serif;color:#222;">
+<div style="max-width:720px;margin:auto;background:#fff;border-radius:20px;padding:28px;">
+  <h1>긴급 구조가 필요한 아이가 있어요</h1>
+  <p th:text="${userName} + '님, 공고 마감이 가까운 아이를 알려드려요.'">긴급 알림</p>
+  <img th:if="${animal.popfile}" th:src="${animal.popfile}" alt="긴급 보호 동물" style="width:100%;max-height:320px;object-fit:cover;border-radius:16px;">
+  <p><strong>공고번호</strong> <span th:text="${animal.noticeNo}">notice</span></p>
+  <p><strong>품종</strong> <span th:text="${animal.kindCd}">kind</span></p>
+  <p><strong>보호센터</strong> <span th:text="${animal.careNm}">care</span></p>
+  <p><a th:href="${detailUrl}" style="display:inline-block;padding:12px 18px;border-radius:999px;background:#f97316;color:white;text-decoration:none;font-weight:bold;">자세히 보기</a></p>
+</div>
+</body>
+</html>

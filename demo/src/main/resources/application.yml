@@ -1,0 +1,93 @@
+﻿spring:
+  config:
+    import:
+      - optional:file:.env[.properties]
+      - optional:file:../.env[.properties]
+  application:
+    name: animal-platform
+  profiles:
+    default: local
+  jpa:
+    open-in-view: false
+  h2:
+    console:
+      enabled: false
+  mail:
+    host: ${MAIL_HOST:localhost}
+    port: ${MAIL_PORT:1025}
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: ${MAIL_SMTP_AUTH:false}
+          starttls:
+            enable: ${MAIL_SMTP_STARTTLS_ENABLE:false}
+  storage:
+    type: ${STORAGE_TYPE:local}
+    max-file-size-bytes: ${STORAGE_MAX_FILE_SIZE_BYTES:5242880}
+    local:
+      upload-root: ${LOCAL_UPLOAD_ROOT:uploads}
+      public-path-prefix: ${LOCAL_UPLOAD_PUBLIC_PATH:/uploads}
+    s3:
+      bucket-name: ${S3_BUCKET_NAME:}
+      region: ${AWS_REGION:ap-northeast-2}
+      cloudfront-url: ${CLOUDFRONT_URL:}
+
+server:
+  port: ${SERVER_PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        # Only health/info are exposed publicly. If additional endpoints are exposed later,
+        # SecurityConfig requires ADMIN for /actuator/** except /health and /info.
+        include: health,info
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+
+app:
+  frontend-base-url: ${FRONTEND_BASE_URL:http://localhost:5173}
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:${FRONTEND_BASE_URL:http://localhost:5173}}
+  auth:
+    google:
+      client-id: ${GOOGLE_CLIENT_ID:}
+      client-secret: ${GOOGLE_CLIENT_SECRET:}
+    kakao:
+      client-id: ${KAKAO_CLIENT_ID:}
+      client-secret: ${KAKAO_CLIENT_SECRET:}
+    naver:
+      client-id: ${NAVER_CLIENT_ID:}
+      client-secret: ${NAVER_CLIENT_SECRET:}
+  payment:
+    prepare-ttl-minutes: ${PAYMENT_PREPARE_TTL_MINUTES:30}
+    portone:
+      store-id: ${PORTONE_STORE_ID:}
+      channel-key: ${PORTONE_CHANNEL_KEY:}
+      api-key: ${PORTONE_API_KEY:}
+      api-secret: ${PORTONE_API_SECRET:}
+      api-base-url: ${PORTONE_API_BASE_URL:https://api.iamport.kr}
+  public-api:
+    provider: data-go-kr
+    service-key: ${PUBLIC_API_KEY:${PUBLIC_API_SERVICE_KEY:}}
+    abandonment-base-url: https://apis.data.go.kr/1543061/abandonmentPublicService_v2
+    shelter-base-url: https://apis.data.go.kr/1543061/animalShelterSrvc_v2
+    stats-base-url: https://apis.data.go.kr/1543061/rescueAnimalStatsService
+  shelter:
+    default-capacity: ${SHELTER_DEFAULT_CAPACITY:30}
+  ai:
+    openrouter:
+      api-key: ${OPENROUTER_API_KEY:}
+      base-url: ${OPENROUTER_BASE_URL:https://openrouter.ai}
+      # Keep the default model on OpenRouter's free router to avoid accidental paid calls.
+      model: ${OPENROUTER_MODEL:meta-llama/llama-3.3-70b-instruct:free}
+      fallback-models: ${OPENROUTER_FALLBACK_MODELS:nvidia/nemotron-3-nano-30b-a3b:free,nvidia/nemotron-nano-9b-v2:free,openai/gpt-oss-120b:free,qwen/qwen3-14b:free}
+      referer: ${OPENROUTER_REFERER:${FRONTEND_BASE_URL:http://localhost:5173}}
+      title: ${OPENROUTER_TITLE:포동포동}

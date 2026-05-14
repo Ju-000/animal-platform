@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<body style="margin:0;padding:24px;background:#f7f4ef;font-family:Arial,'Malgun Gothic',sans-serif;color:#222;">
+<div style="max-width:720px;margin:auto;background:#fff;border-radius:20px;padding:28px;">
+  <h1>💛 보호소 월간 소식</h1>
+  <p th:text="${userName} + '님, 이번 달 보호소 소식을 전해드려요.'">월간 소식</p>
+  <p>이번 달 입양 완료 동물 수: <strong th:text="${adoptedCount}">0</strong>마리</p>
+  <h2>진행 중인 캠페인</h2>
+  <ul>
+    <li th:each="campaign : ${campaigns}">
+      <strong th:text="${campaign.title}">캠페인</strong>
+      <span th:text="'목표 ' + ${campaign.goalAmount} + '원'">목표</span>
+    </li>
+  </ul>
+  <p>꾸준한 관심 덕분에 아이들의 하루가 조금씩 나아지고 있어요. 감사합니다.</p>
+</div>
+</body>
+</html>

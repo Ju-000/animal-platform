@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<body style="margin:0;padding:24px;background:#f7f4ef;font-family:Arial,'Malgun Gothic',sans-serif;color:#222;">
+<div style="max-width:720px;margin:auto;background:#fff;border-radius:20px;padding:28px;">
+  <h1>👼 천사 후원자 주간 소식</h1>
+  <p th:text="${userName} + '님께 전하는 이번 주 보호소 이야기입니다.'">주간 소식</p>
+  <p>입양 완료 누적 동물 수: <strong th:text="${adoptedCount}">0</strong>마리</p>
+  <p>천사 후원자님의 응원이 보호소의 가장 조용한 곳까지 닿고 있어요.</p>
+</div>
+</body>
+</html>
