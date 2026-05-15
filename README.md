@@ -13,7 +13,7 @@
 
 <br />
 
-<img src="frontend/src/assets/banner1.png" alt="다시, 가족 메인 배너" width="900" />
+<img src="docs/images/main.png" alt="다시, 가족 메인 화면" width="900" />
 
 </div>
 
@@ -34,7 +34,11 @@
 
 | 메인 | 보호소 지도 탐색 |
 | --- | --- |
-| <img src="frontend/src/assets/banner1.png" alt="메인 배너" width="420" /> | <img src="frontend/src/assets/banner3.png" alt="보호소 안내 배너" width="420" /> |
+| <img src="docs/images/main.png" alt="메인 화면" width="420" /> | <img src="docs/images/shelters.png" alt="보호소 지도 탐색 화면" width="420" /> |
+
+| AI 소개 |
+| --- |
+| <img src="docs/images/ai-summary.png" alt="AI 소개 화면" width="840" /> |
 
 ## 빠른 실행
 
