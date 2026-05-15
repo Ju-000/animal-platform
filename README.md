@@ -36,7 +36,7 @@
 | --- | --- |
 | <img src="docs/images/main.png" alt="메인 화면" width="420" /> | <img src="docs/images/shelters.png" alt="보호소 지도 탐색 화면" width="420" /> |
 
-| AI 소개 |
+| 유기 동물 정보 / AI 소개 |
 | --- |
 | <img src="docs/images/ai-summary.png" alt="AI 소개 화면" width="840" /> |
 
