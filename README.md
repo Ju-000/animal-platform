@@ -13,7 +13,7 @@
 
 <br />
 
-<img src="docs/images/main.png" alt="다시, 가족 메인 화면" width="900" />
+<img src="docs/images/main.gif" alt="다시, 가족 메인 화면 시연" width="900" />
 
 </div>
 
@@ -34,7 +34,7 @@
 
 | 메인 | 보호소 지도 탐색 |
 | --- | --- |
-| <img src="docs/images/main.png" alt="메인 화면" width="420" /> | <img src="docs/images/shelters.png" alt="보호소 지도 탐색 화면" width="420" /> |
+| <img src="docs/images/main.gif" alt="메인 화면 시연" width="420" /> | <img src="docs/images/shelters.png" alt="보호소 지도 탐색 화면" width="420" /> |
 
 | 유기 동물 정보 / AI 소개 |
 | --- |
